@@ -1,0 +1,109 @@
+{
+  "Artificial Intelligence & Machine Learning": {
+    "technical": [
+      {"question": "What is Artificial Intelligence?", "ideal_answer": "Artificial Intelligence is a branch of computer science that focuses on creating machines that can perform tasks requiring human intelligence.", "type": "theory"},
+      {"question": "What is Machine Learning?", "ideal_answer": "Machine Learning allows computers to learn from data without explicit programming.", "type": "theory"},
+      {"question": "Explain supervised learning.", "ideal_answer": "It is a method where models are trained on labeled data.", "type": "theory"},
+      {"question": "What is deep learning?", "ideal_answer": "Deep learning uses multi-layer neural networks to learn patterns.", "type": "theory"},
+      {"question": "What is overfitting?", "ideal_answer": "When model performs well on training but poorly on new data.", "type": "theory"},
+      {"question": "What is neural network?", "ideal_answer": "A system of nodes inspired by the human brain.", "type": "theory"},
+      {"question": "Write Python code to print 1 to 5.", "ideal_answer": "for i in range(1,6): print(i)", "type": "coding"},
+      {"question": "Write Python function to add numbers.", "ideal_answer": "def add(a,b): return a+b", "type": "coding"}
+    ],
+    "hr": [
+      {"question": "Tell me about yourself.", "ideal_answer": "Introduce yourself with education and skills."},
+      {"question": "Why AI?", "ideal_answer": "Interest in intelligent systems."},
+      {"question": "Your strengths?", "ideal_answer": "Problem solving and learning ability."}
+    ]
+  },
+
+  "Data Science": {
+    "technical": [
+      {"question": "What is Data Science?", "ideal_answer": "Field that extracts insights from data.", "type": "theory"},
+      {"question": "What is data cleaning?", "ideal_answer": "Removing errors from data.", "type": "theory"},
+      {"question": "What is pandas?", "ideal_answer": "Python library for data analysis.", "type": "theory"},
+      {"question": "What is visualization?", "ideal_answer": "Displaying data graphically.", "type": "theory"},
+      {"question": "Explain dataset.", "ideal_answer": "Collection of structured data.", "type": "theory"},
+      {"question": "Role of statistics?", "ideal_answer": "Helps analyze and predict data.", "type": "theory"},
+      {"question": "Read CSV in Python.", "ideal_answer": "pd.read_csv()", "type": "coding"},
+      {"question": "Show first 5 rows.", "ideal_answer": "df.head()", "type": "coding"}
+    ],
+    "hr": [
+      {"question": "Tell me about yourself.", "ideal_answer": "Explain background and skills."},
+      {"question": "Why data science?", "ideal_answer": "Interest in data insights."},
+      {"question": "Strengths?", "ideal_answer": "Analytical thinking."}
+    ]
+  },
+
+  "Cybersecurity": {
+    "technical": [
+      {"question": "What is cybersecurity?", "ideal_answer": "Protecting systems from attacks.", "type": "theory"},
+      {"question": "What is firewall?", "ideal_answer": "Controls network traffic.", "type": "theory"},
+      {"question": "What is phishing?", "ideal_answer": "Fake attempts to steal info.", "type": "theory"},
+      {"question": "What is malware?", "ideal_answer": "Harmful software.", "type": "theory"},
+      {"question": "What is encryption?", "ideal_answer": "Securing data by coding.", "type": "theory"},
+      {"question": "Explain 2FA.", "ideal_answer": "Two-step authentication.", "type": "theory"},
+      {"question": "Generate password Python.", "ideal_answer": "Use random module.", "type": "coding"},
+      {"question": "Check password length.", "ideal_answer": "len(password)>8", "type": "coding"}
+    ],
+    "hr": [
+      {"question": "Tell me about yourself.", "ideal_answer": "Intro with cybersecurity interest."},
+      {"question": "Why cybersecurity?", "ideal_answer": "Interest in protection systems."},
+      {"question": "Strengths?", "ideal_answer": "Attention to detail."}
+    ]
+  },
+
+  "Cloud Computing": {
+    "technical": [
+      {"question": "What is cloud computing?", "ideal_answer": "Delivery of services over internet.", "type": "theory"},
+      {"question": "Types of cloud?", "ideal_answer": "IaaS, PaaS, SaaS.", "type": "theory"},
+      {"question": "What is AWS?", "ideal_answer": "Cloud service platform.", "type": "theory"},
+      {"question": "What is virtualization?", "ideal_answer": "Creating virtual resources.", "type": "theory"},
+      {"question": "Explain SaaS.", "ideal_answer": "Software via internet.", "type": "theory"},
+      {"question": "Explain PaaS.", "ideal_answer": "Platform for development.", "type": "theory"},
+      {"question": "Print Cloud text.", "ideal_answer": "print('Cloud')", "type": "coding"},
+      {"question": "Create list.", "ideal_answer": "list = []", "type": "coding"}
+    ],
+    "hr": [
+      {"question": "Tell me about yourself.", "ideal_answer": "Explain background."},
+      {"question": "Why cloud?", "ideal_answer": "Interest in scalable systems."},
+      {"question": "Strengths?", "ideal_answer": "Learning ability."}
+    ]
+  },
+
+  "Software Development": {
+    "technical": [
+      {"question": "What is programming?", "ideal_answer": "Writing instructions for computer.", "type": "theory"},
+      {"question": "What is OOP?", "ideal_answer": "Object-based programming.", "type": "theory"},
+      {"question": "What is class?", "ideal_answer": "Blueprint for objects.", "type": "theory"},
+      {"question": "What is function?", "ideal_answer": "Reusable code block.", "type": "theory"},
+      {"question": "What is debugging?", "ideal_answer": "Fixing errors.", "type": "theory"},
+      {"question": "What is Git?", "ideal_answer": "Version control system.", "type": "theory"},
+      {"question": "Even odd program.", "ideal_answer": "if num%2==0", "type": "coding"},
+      {"question": "Reverse string.", "ideal_answer": "text[::-1]", "type": "coding"}
+    ],
+    "hr": [
+      {"question": "Tell me about yourself.", "ideal_answer": "Intro with dev interest."},
+      {"question": "Why developer?", "ideal_answer": "Interest in building apps."},
+      {"question": "Strengths?", "ideal_answer": "Logical thinking."}
+    ]
+  },
+
+  "Data Analytics": {
+    "technical": [
+      {"question": "What is data analytics?", "ideal_answer": "Analyzing data for insights.", "type": "theory"},
+      {"question": "What is SQL?", "ideal_answer": "Database query language.", "type": "theory"},
+      {"question": "What is dashboard?", "ideal_answer": "Visual data display.", "type": "theory"},
+      {"question": "What is BI?", "ideal_answer": "Data-based decision making.", "type": "theory"},
+      {"question": "What is Excel use?", "ideal_answer": "Analysis and charts.", "type": "theory"},
+      {"question": "What is cleaning?", "ideal_answer": "Fixing data errors.", "type": "theory"},
+      {"question": "SQL select all.", "ideal_answer": "SELECT * FROM table;", "type": "coding"},
+      {"question": "Create list Python.", "ideal_answer": "[1,2,3]", "type": "coding"}
+    ],
+    "hr": [
+      {"question": "Tell me about yourself.", "ideal_answer": "Explain analytics interest."},
+      {"question": "Why analytics?", "ideal_answer": "Interest in insights."},
+      {"question": "Strengths?", "ideal_answer": "Attention to detail."}
+    ]
+  }
+}

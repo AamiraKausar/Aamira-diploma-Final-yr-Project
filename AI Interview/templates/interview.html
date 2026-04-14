@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Interview</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="interview-container">
+
+<h2 style="text-align:center;">{{ title }}</h2>
+
+<p style="color:gray; font-size:14px;">
+Question {{ number }} / {{ total }} • {{ remaining }} remaining
+</p>
+
+<form method="POST">
+
+{% for q in questions %}
+
+<p><strong>{{ number }}. {{ q.question }}</strong></p>
+
+{% if session["mode"] == "text" %}
+
+<textarea id="answerBox" name="answer" rows="4" placeholder="Your answer">{{ request.form.get('answer','') }}</textarea>
+
+{% else %}
+
+<br><br>
+
+<textarea id="answerBox" name="answer" rows="4" placeholder="Your answer will appear here..." readonly></textarea>
+
+<br><br>
+
+<button type="button" onclick="startRecording()">🎤 Start Recording</button>
+
+<p id="statusText" style="font-size:14px; margin-top:8px;"></p>
+
+{% endif %}
+
+{% endfor %}
+
+<br><br>
+
+<button type="submit">Next</button>
+
+</form>
+
+</div>
+
+<!-- 🎤 VOICE SCRIPT -->
+<script>
+
+function startRecording(){
+
+if (!('webkitSpeechRecognition' in window)){
+alert("Speech recognition not supported");
+return;
+}
+
+var recognition = new webkitSpeechRecognition();
+
+recognition.lang = "en-US";
+recognition.continuous = false;
+recognition.interimResults = false;
+
+document.getElementById("statusText").innerText = "🎤 Listening...";
+
+recognition.start();
+
+recognition.onresult = function(event){
+
+var speechText = event.results[0][0].transcript;
+
+document.getElementById("answerBox").value = speechText;
+
+document.getElementById("statusText").innerText = "✅ Answer Recorded";
+
+};
+
+recognition.onerror = function(){
+document.getElementById("statusText").innerText = "⚠️ Error recording voice";
+};
+
+}
+
+</script>
+
+<!-- 🚫 ANTI-CHEATING SCRIPT -->
+<script>
+
+// 🚫 TAB SWITCH DETECTION
+document.addEventListener("visibilitychange", function () {
+    if (document.hidden) {
+        alert("⚠️ Tab switching detected! This may be considered cheating.");
+    }
+});
+
+// 🚫 DISABLE COPY
+document.addEventListener("copy", function (e) {
+    e.preventDefault();
+    alert("⚠️ Copy is not allowed during the interview.");
+});
+
+// 🚫 DISABLE PASTE
+document.addEventListener("paste", function (e) {
+    e.preventDefault();
+    alert("⚠️ Paste is not allowed during the interview.");
+});
+
+// 🚫 DISABLE RIGHT CLICK
+document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+});
+
+// 🚫 BLOCK CTRL+C / CTRL+V
+document.addEventListener("keydown", function (e) {
+    if (e.ctrlKey && (e.key === "c" || e.key === "v")) {
+        e.preventDefault();
+        alert("⚠️ Copy/Paste not allowed!");
+    }
+});
+
+</script>
+
+</body>
+</html>

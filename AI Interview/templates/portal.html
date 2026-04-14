@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Candidate Portal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="bg">
+
+<div class="dashboard">
+
+
+<!-- PROFILE CARD -->
+
+<div class="profile-card">
+
+<h3>Candidate Profile</h3>
+
+<p>👤 <b>Name:</b> {{ name }}</p>
+<p>📧 <b>Email:</b> {{ email }}</p>
+
+</div>
+
+
+<!-- STREAM CARD -->
+
+<div class="stream-card">
+
+<h2>Select Interview Stream</h2>
+
+<form method="POST">
+
+<select name="stream" required>
+
+<option value="">Choose Stream</option>
+
+<option>Artificial Intelligence & Machine Learning</option>
+<option>Data Science</option>
+<option>Cybersecurity</option>
+<option>Cloud Computing</option>
+<option>Software Development</option>
+<option>Data Analytics</option>
+
+</select>
+<h3>Interview Mode</h3>
+
+<div style="display:flex; gap:20px; justify-content:center;">
+
+<label>
+<input type="radio" name="mode" value="text" checked>
+Text
+</label>
+
+<label>
+<input type="radio" name="mode" value="voice">
+Voice 🎤
+</label>
+
+</div>
+<br><br>
+
+<button type="submit">Start Interview</button>
+
+</form>
+
+
+
+</div>
+
+</body>
+</html>

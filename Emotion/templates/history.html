@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emotion History</title>
+</head>
+
+<body style="text-align:center; font-family:Arial;">
+
+    <h2>Emotion History</h2>
+
+    {% if data %}
+        {% for line in data %}
+            <p>{{ line }}</p>
+        {% endfor %}
+    {% else %}
+        <p>No history available</p>
+    {% endif %}
+
+    <br>
+    <a href="{{ url_for('dashboard') }}">
+        <button>Back to Dashboard</button>
+    </a>
+
+</body>
+</html>

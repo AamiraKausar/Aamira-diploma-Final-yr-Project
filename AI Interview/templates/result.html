@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Results</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+body { font-family: Poppins; background:#f5f7fb; }
+
+.dashboard { display:flex; justify-content:space-between; margin-top:30px; }
+
+.card {
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.05);
+    margin-bottom:20px;
+}
+
+.strength { border-left:5px solid green; }
+.weakness { border-left:5px solid red; }
+.suggestion { border-left:5px solid orange; }
+
+.left { width:45%; }
+.right { width:45%; }
+
+button {
+    padding:10px;
+    background:#4f46e5;
+    color:white;
+    border:none;
+    border-radius:8px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Interview Results</h2>
+
+<div id="resultSection">
+
+<table border="1" width="100%">
+<tr><th>Question</th><th>Answer</th><th>Score</th></tr>
+
+{% for r in results %}
+<tr>
+<td>{{ r.question }}</td>
+<td>{{ r.answer }}</td>
+<td>{{ r.score }}/5</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<h3>Total Score: {{ total }}</h3>
+
+<button onclick="showDashboard()">View Dashboard</button>
+
+</div>
+
+
+<div id="dashboardSection" style="display:none;">
+
+<h2 style="text-align:center;">Dashboard</h2>
+
+<div class="dashboard">
+
+<div class="left">
+
+<div class="card" style="text-align:center; background:#4f46e5; color:white;">
+<h2>{{ confidence }}%</h2>
+<p>Confidence</p>
+</div>
+
+<div class="card">
+<canvas id="chart"></canvas>
+</div>
+
+</div>
+
+<div class="right">
+
+<div class="card strength">
+<h3>Strengths</h3>
+<ul>
+{% if strengths %}
+{% for s in strengths %}
+<li>{{ s }}</li>
+{% endfor %}
+{% else %}
+<li>No strengths yet</li>
+{% endif %}
+</ul>
+</div>
+
+<div class="card weakness">
+<h3>Weaknesses</h3>
+<ul>
+{% for w in weaknesses %}
+<li>{{ w }}</li>
+{% endfor %}
+</ul>
+</div>
+
+<div class="card suggestion">
+<h3>Suggestions</h3>
+<ul>
+{% for s in suggestions %}
+<li>{{ s }}</li>
+{% endfor %}
+</ul>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function showDashboard(){
+document.getElementById("resultSection").style.display="none";
+document.getElementById("dashboardSection").style.display="block";
+}
+
+new Chart(document.getElementById("chart"),{
+type:'bar',
+data:{
+labels:['Technical','HR','Confidence'],
+datasets:[{
+data:[{{tech_avg}},{{hr_avg}},{{confidence/20}}],
+backgroundColor:['blue','green','orange']
+}]
+},
+options:{scales:{y:{beginAtZero:true,max:5}}}
+});
+
+</script>
+
+</body>
+</html>

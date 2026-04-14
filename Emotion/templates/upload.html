@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Image</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="main-container">
+    <div class="result-card {% if emotion %}{{ emotion|lower }}{% endif %}">
+
+        <h1>Emotion Detection Result</h1>
+
+        {% if emotion %}
+            <h2 class="emotion-text">
+                {{ emotion }}
+                {% if emotion == "Happy" %} 😊
+                {% elif emotion == "Sad" %} 😢
+                {% elif emotion == "Angry" %} 😡
+                {% elif emotion == "Surprise" %} 😲
+                {% elif emotion == "Neutral" %} 😐
+                {% elif emotion == "Fear" %} 😨
+                {% elif emotion == "Disgust" %} 🤢
+                {% endif %}
+            </h2>
+
+            <!-- Confidence -->
+            <div class="badge emotion-badge {{ emotion|lower }}">
+                Confidence: {{ confidence }}%
+            </div>
+
+            <!-- Suggestion -->
+            <div class="badge" style="background:#ff9800; color:white; margin-top:10px;">
+                Suggestion: {{ feedback }}
+            </div>
+
+            <!-- Image -->
+            <img src="{{ url_for('static', filename='uploads/' + image_file) }}" class="result-img">
+
+        {% else %}
+            <h3>Upload an image to detect emotion.</h3>
+        {% endif %}
+
+        <br><br>
+
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" required>
+            <br><br>
+            <button type="submit">Detect Emotion</button>
+        </form>
+
+        <br>
+
+        <a href="{{ url_for('dashboard') }}">
+            <button class="back-btn">Back to Dashboard</button>
+        </a>
+
+    </div>
+</div>
+
+</body>
+</html>

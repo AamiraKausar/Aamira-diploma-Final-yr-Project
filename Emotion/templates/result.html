@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result - Emotion Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="main-container">
+    <div class="result-card">
+
+        <h1>Detection Result</h1>
+
+        <h2 class="emotion-text">
+            {{ emotion }}
+            {% if emotion == "Happy" %} 😊
+            {% elif emotion == "Sad" %} 😢
+            {% elif emotion == "Angry" %} 😡
+            {% elif emotion == "Surprise" %} 😲
+            {% elif emotion == "Neutral" %} 😐
+            {% endif %}
+        </h2>
+
+        <p><b>Confidence:</b> {{ confidence }}%</p>
+        <p><b>Suggestion:</b> {{ feedback }}</p>
+
+        <img src="{{ url_for('static', filename='uploads/' + image_file) }}" class="result-img">
+
+        <br><br>
+
+        <a href="{{ url_for('dashboard') }}">
+            <button class="back-btn">Back to Dashboard</button>
+        </a>
+
+    </div>
+</div> 
+
+</body>
+</html>

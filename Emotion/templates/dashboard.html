@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - Emotion Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<!-- Background video -->
+<video autoplay muted loop id="bg-video-dashboard">
+    <source src="{{ url_for('static', filename='videos/1.mp4') }}" type="video/mp4">
+</video>
+
+<div class="dashboard-container">
+
+    <h1>AI-Based Emotion Detection System</h1>
+
+    <p>
+        This system uses Deep Learning to analyze facial expressions 
+        and detect human emotions from images.
+    </p>
+
+    <hr>
+
+    <h3>Features:</h3>
+    <ul>
+        <li>Upload Image for Emotion Detection</li>
+        <li>Shows Emotion with Confidence Score</li>
+        <li>Provides Smart Suggestions</li>
+        <li>Stores Emotion History</li>
+    </ul>
+
+    <hr>
+
+    <h3>Applications:</h3>
+    <ul>
+        <li>Mental Health Monitoring</li>
+        <li>Customer Sentiment Analysis</li>
+        <li>Online Learning Engagement</li>
+    </ul>
+
+    <br>
+
+    <div class="buttons">
+        <a href="{{ url_for('upload_page') }}">
+            <button>Upload Image</button>
+        </a>
+
+        <a href="/camera"><button>Live Camera</button></a>
+
+        <a href="/history">
+            <button>View History</button>
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>

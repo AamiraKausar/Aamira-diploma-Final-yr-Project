@@ -1,0 +1,270 @@
+
+
+#bg-video {
+    position: fixed;       
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index:-1;        
+} 
+
+body
+{
+    font-family: Arial;
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+    height: 100vh;            
+    margin: 0;
+}
+
+.container {
+    background-color: white;;
+    padding: 40px;
+    border-radius: 10px;
+    width: 350px;
+    text-align: center;
+}
+
+.container h1 {
+    font-size: 22px;
+    color: darkgreen;                 
+    margin-bottom: 10px;
+}
+
+.container p {
+    font-size: 14px;
+    color: black;
+    margin-bottom: 30px;
+}
+
+.container input[type="text"],
+.container input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.container button {
+    width: 95%;
+    padding: 10px;
+    background-color:lightgreen; 
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.container button:hover {
+    background-color: green;
+}
+
+
+
+
+#bg-video-dashboard {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;   
+}
+
+.dashboard-container {
+    background-color: honeydew;
+    padding: 40px;
+    width: 420px;
+    text-align: center;
+    border-radius: 12px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 1;  
+}
+
+.dashboard-container h1 {
+    color: darkgreen;
+    margin-bottom: 15px;
+}
+
+{
+    color: darkslategray;
+    margin-bottom: 25px;
+}
+
+.dashboard-container .buttons button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.dashboard-container .buttons button:hover {
+    background-color: darkgreen;
+}
+
+
+.upload-container {
+    background-color: honeydew;
+    padding: 40px;
+    width: 420px;
+    text-align: center;
+    border-radius: 12px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.upload-container h1 {
+    color: darkgreen;
+    margin-bottom: 20px;
+}
+
+.upload-container h2 {
+    color: green;
+    margin-top: 15px;
+}
+
+.upload-container button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.upload-container button:hover {
+    background-color: darkgreen;
+}
+
+
+
+/* Body gradient background */
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(to right, #74ebd5, #ACB6E5);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+/* Main container */
+.main-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Result card */
+.result-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    transition: background 0.5s ease;
+}
+
+/* Emotion-based card colors */
+.result-card.happy { background: #fff9c4; }
+.result-card.sad { background: #90caf9; }
+.result-card.angry { background: #ef9a9a; }
+.result-card.surprise { background: #ffe082; }
+.result-card.neutral { background: #eeeeee; }
+.result-card.fear { background: #b39ddb; }
+.result-card.disgust { background: #a5d6a7; }
+
+/* Upload form */
+.result-card form input[type="file"] {
+    margin-top: 10px;
+}
+
+.result-card form button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background: #4CAF50;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.result-card form button:hover {
+    background: #45a049;
+}
+
+/* Emotion text */
+.emotion-text {
+    font-size: 28px;
+    margin: 10px 0;
+    color: #333; /* Dark text for visibility */
+    font-weight: bold;
+}
+
+/* Result badges */
+.badge {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 12px;
+    margin: 5px 3px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000; /* readable on all cards */
+}
+
+/* Specific badges */
+.emotion-badge { background: #ffd700; }
+.age-badge { background: #ff7043; }
+.gender-badge { background: #26a69a; }
+.race-badge { background: #8e24aa; }
+
+/* Image */
+.result-img {
+    width: 200px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+/* Back button */
+.back-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background: #2196F3;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: #1976D2;
+}
+
+/* Horizontal line */
+hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #ccc;
+}
